@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comedySLAM™ — Joe Nipote</title>
+    <meta name="description" content="Joe Nipote's comedySLAM™ — A Night Of Slammin' Standup Comedy! Live comedy concerts for charities and non-profits across the country.">
+    <link rel="icon" type="image/png" href="graphic assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .slam-hero-img {
+            width: 100%;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            display: block;
+            margin-bottom: 40px;
+            max-height: 380px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .slam-intro {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: #ccc;
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .section-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .slam-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .slam-gallery-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .slam-gallery-card img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slam-gallery-label {
+            padding: 10px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .slam-booking-cta {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .slam-booking-copy {
+            flex: 1;
+        }
+
+        .slam-booking-cta h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .slam-booking-cta p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 480px;
+        }
+
+        .slam-booking-action {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            flex-shrink: 0;
+            padding-top: 4px;
+        }
+
+        .slam-booking-cta .cta-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--accent);
+            color: #000;
+            border-radius: 7px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        .slam-booking-cta .cta-btn:hover {
+            opacity: 0.82;
+            color: #000;
+        }
+
+        .slam-booking-cta .cta-note {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 700px) {
+            .slam-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .slam-booking-cta { flex-direction: column; gap: 24px; padding: 28px; }
+            .slam-booking-action { align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="brand-title">Joe Nipote</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li class="nav-dropdown">
+                    <a href="projects.html" class="nav-link active">Other Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-header">
+                <h3 class="mobile-menu-title">Menu</h3>
+                <button class="mobile-menu-close">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Other Projects <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">About <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Contact <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <div class="page-header-inner">
+                <span class="page-badge"><a href="projects.html" style="color:inherit;">Other Projects</a></span>
+                <h1>comedySLAM™</h1>
+                <p class="subtitle">A Night Of Slammin' Standup Comedy — produced and headlined by Joe Nipote for charities across the country.</p>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="content-inner">
+
+                <!-- Hero -->
+                <img src="graphic assets/projects photos/ComedySLAM.jpg" alt="Joe Nipote's comedySLAM™" class="slam-hero-img">
+
+                <!-- Intro -->
+                <p class="slam-intro"><em>Joe Nipote's comedySLAM™ — A Night Of Slammin' Standup Comedy!</em> Joe produces and headlines his own live comedy concerts for charities and non-profits across the country. These full-night events bring together top comedians for a cause — raising money and spirits for organizations that matter.</p>
+
+                <!-- Photos & Posters -->
+                <p class="section-eyebrow">Photos &amp; Posters</p>
+
+                <div class="slam-gallery-grid">
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/lapd.jpg" alt="LAPD comedySLAM">
+                        <div class="slam-gallery-label">LAPD comedySLAM™</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/detroit.jpg" alt="Detroit comedySLAM">
+                        <div class="slam-gallery-label">Detroit comedySLAM™</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/ymca.jpg" alt="YMCA Strong Kids">
+                        <div class="slam-gallery-label">YMCA Strong Kids Campaign</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/wbef.jpg" alt="WBEF comedySLAM">
+                        <div class="slam-gallery-label">Will Buckley Educational Foundation</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/erinnicole.jpg" alt="Erin Nicole comedySLAM">
+                        <div class="slam-gallery-label">Erin Nicole Foundation</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/poster-fh.jpg" alt="comedySLAM poster">
+                        <div class="slam-gallery-label">Show Poster</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/poster-vo.jpg" alt="comedySLAM poster">
+                        <div class="slam-gallery-label">Show Poster</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/poster-strongkids.jpg" alt="Strong Kids poster">
+                        <div class="slam-gallery-label">Strong Kids — Show Poster</div>
+                    </div>
+                    <div class="slam-gallery-card">
+                        <img src="graphic assets/comedyslam/poster-alzheimers.jpg" alt="Alzheimer's poster">
+                        <div class="slam-gallery-label">Alzheimer's Awareness — Show Poster</div>
+                    </div>
+                </div>
+
+                <!-- Booking CTA -->
+                <div class="slam-booking-cta">
+                    <div class="slam-booking-copy">
+                        <h3>Bring comedySLAM™ to Your Organization</h3>
+                        <p>Joe is available to produce and headline a comedySLAM™ event for your charity, non-profit, or community organization. Reach out to discuss the details and check availability.</p>
+                    </div>
+                    <div class="slam-booking-action">
+                        <a href="mailto:Joe@joenipote.com" class="cta-btn">Email Joe →</a>
+                        <span class="cta-note">Joe@joenipote.com</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">Joe Nipote</div>
+            <div class="footer-actions">
+                <a href="mailto:Joe@joenipote.com" class="footer-btn primary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Email Joe
+                </a>
+                <a href="#" class="footer-btn">Speaking</a>
+                <a href="autographs.html" class="footer-btn">Autographs</a>
+                <a href="#" class="footer-btn">Merch</a>
+            </div>
+            <div class="footer-copy">© 2026 Joe Nipote</div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

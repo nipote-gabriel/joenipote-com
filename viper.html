@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viper — Joe Nipote</title>
+    <meta name="description" content="Joe Nipote played Franklin 'Frankie' Waters on NBC's Viper for all four-plus seasons — the only original cast member to stay the entire run.">
+    <link rel="icon" type="image/png" href="graphic assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .viper-logo-wrap {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 32px;
+            background: #000;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .viper-logo-wrap img {
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+
+        .viper-intro {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: #ccc;
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .section-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .viper-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .viper-photo-grid img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            object-position: top;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        .viper-quote {
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            margin: 0 0 40px;
+            background: rgba(91,184,222,0.05);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .viper-quote p {
+            font-style: italic;
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+
+        .viper-quote cite {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        .viper-article {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            margin-bottom: 40px;
+        }
+
+        .viper-article-meta {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .viper-article h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        .viper-article p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.85;
+            margin-bottom: 14px;
+        }
+
+        .viper-article p:last-child {
+            margin-bottom: 0;
+        }
+
+        .viper-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .viper-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .viper-stat-num {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .viper-stat-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 700px) {
+            .viper-photo-grid { grid-template-columns: 1fr 1fr; }
+            .viper-stats { grid-template-columns: 1fr; }
+            .viper-article { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="brand-title">Joe Nipote</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li class="nav-dropdown">
+                    <a href="projects.html" class="nav-link active">Other Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-header">
+                <h3 class="mobile-menu-title">Menu</h3>
+                <button class="mobile-menu-close">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Other Projects <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">About <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Contact <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <div class="page-header-inner">
+                <span class="page-badge"><a href="projects.html" style="color:inherit;">Other Projects</a></span>
+                <h1>Viper</h1>
+                <p class="subtitle">Franklin 'Frankie' Waters — the only original cast member to appear in every season of NBC's Viper.</p>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="content-inner">
+
+                <!-- Logo -->
+                <div class="viper-logo-wrap">
+                    <img src="graphic assets/viper/logo.png" alt="Viper — NBC">
+                </div>
+
+                <!-- Stats -->
+                <div class="viper-stats">
+                    <div class="viper-stat">
+                        <div class="viper-stat-num">5</div>
+                        <div class="viper-stat-label">Seasons on NBC &amp; Paramount</div>
+                    </div>
+                    <div class="viper-stat">
+                        <div class="viper-stat-num">#1</div>
+                        <div class="viper-stat-label">Only original cast member<br>for the entire run</div>
+                    </div>
+                    <div class="viper-stat">
+                        <div class="viper-stat-num">&#39;93</div>
+                        <div class="viper-stat-label">Series debut</div>
+                    </div>
+                </div>
+
+                <!-- Intro -->
+                <p class="viper-intro">Joe Nipote played Franklin <em>'Frankie' Xavier Waters</em> — the fast-talking, street-smart mechanic — on NBC's <strong>Viper</strong> for the entire run of the series. While other cast members came and went, Joe was the one constant, appearing in every season from the pilot through the final episode.</p>
+
+                <!-- Pull Quote -->
+                <div class="viper-quote">
+                    <p>"I'm the only original member from the cast. It's an ensemble, but the car is the star of the show — and I'm really happy with it, since the car can't function without us."</p>
+                    <cite>— Joe Nipote, 1998</cite>
+                </div>
+
+                <!-- Photos -->
+                <p class="section-eyebrow">Photos</p>
+
+                <div class="viper-photo-grid">
+                    <img src="graphic assets/viper/cast-s1-bw.jpg" alt="Viper — Season 1 Original Cast">
+                    <img src="graphic assets/viper/promo-s1-bw.jpg" alt="Viper — Season 1 Promo">
+                    <img src="graphic assets/viper/season-45.jpg" alt="Viper — Seasons 4 &amp; 5">
+                    <img src="graphic assets/viper/photo-2.jpg" alt="Viper — Joe Nipote">
+                    <img src="graphic assets/viper/photo-3.jpg" alt="Viper — Joe Nipote">
+                    <img src="graphic assets/viper/photo-4.jpg" alt="Viper — Joe Nipote">
+                </div>
+
+                <!-- Article -->
+                <p class="section-eyebrow">Press</p>
+
+                <div class="viper-article">
+                    <p class="viper-article-meta">Michelle Erica Green &mdash; July 17, 1998</p>
+                    <h3>Main Man Mechanic: Joe Nipote &mdash; The Car Guy</h3>
+                    <p>"I'm not really a car guy," Joe Nipote admits freely. "I enjoy cars, I appreciate them, but I really don't know my way around a car — I know where to put the gas and where to put the key." It's an irony that the mechanic of the Viper team is the show's self-described non-car-guy, but Joe has made Frankie Waters one of the series' most beloved characters across five seasons.</p>
+                    <p>Frankie began as a broad comic caricature — a guy from New Jersey with a thick accent and a big pompadour. Over time, at Joe's urging and with the producers' blessing, the character evolved into a fully-realized member of the Viper team. "The producers asked me to change the character a little bit," Joe explained. "I was going to have some more responsibilities, I was now going to be a full-time cop and really part of the Viper team."</p>
+                    <p>Joe's path to Viper ran through standup comedy, radio, and a relentless drive to act. Originally from Southfield, Michigan, he began performing standup in 1980, working as an opening act for major entertainers in Las Vegas and beyond. A stint in radio in 1987 gave way to the pull of Hollywood — and Joe headed back to LA. "His hunger for stand-up and acting drove him out of the radio booth," as he put it. He landed the Viper role quickly after arriving, and it would define the next half-decade of his career.</p>
+                    <p>"Acting is the best life, if you are a working actor," Joe said. "My goal in life was to make as much money as possible and do the least amount of work — and acting is perfect for that, because when you're working you're making a lot of money, and when you're not working, you have all the time in the world." His ambition on Viper was simple: "play it out as long as it goes."</p>
+                </div>
+
+                <!-- Second Quote -->
+                <div class="viper-quote">
+                    <p>"Frankie used to be an annoying caricature of a person from New Jersey with a very thick accent and a big pompadour. The producers asked me to change the character a little bit — I was going to have some more responsibilities, I was now a full-time cop and really part of the Viper team."</p>
+                    <cite>— Joe Nipote on the evolution of Frankie Waters</cite>
+                </div>
+
+                <!-- Credits box -->
+                <div class="highlight-card">
+                    <h3>Viper — Series Credits</h3>
+                    <ul class="highlight-list">
+                        <li>Franklin 'Frankie' Xavier Waters (Co-Star) — all seasons</li>
+                        <li>NBC / Paramount Television</li>
+                        <li>Only original cast member to appear in every season</li>
+                        <li>Character evolved from comic relief to full Viper team member</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">Joe Nipote</div>
+            <div class="footer-actions">
+                <a href="mailto:Joe@joenipote.com" class="footer-btn primary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Email Joe
+                </a>
+                <a href="#" class="footer-btn">Speaking</a>
+                <a href="autographs.html" class="footer-btn">Autographs</a>
+                <a href="#" class="footer-btn">Merch</a>
+            </div>
+            <div class="footer-copy">© 2026 Joe Nipote</div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

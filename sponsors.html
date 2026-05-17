@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors — Joe Nipote</title>
+    <meta name="description" content="Joe Nipote's brand partners and sponsors.">
+    <link rel="icon" type="image/png" href="graphic assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sponsors-lead {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 52px;
+        }
+
+        /* Category section groupings */
+        .sponsor-group {
+            margin-bottom: 44px;
+        }
+
+        .sponsor-group-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .sponsor-group-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .sponsors-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Sponsor card — link wrapper, vertical layout */
+        .sponsor-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            text-align: center;
+            transition: border-color 0.2s, background 0.2s, transform 0.15s;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .sponsor-card:hover {
+            border-color: var(--accent);
+            background: var(--accent-dim);
+            transform: translateY(-2px);
+            color: inherit;
+        }
+
+        /* Logo image area — fixed height so all cards align */
+        .sponsor-logo-area {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .sponsor-logo-area img {
+            max-height: 88px;
+            max-width: 160px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .sponsor-card:hover .sponsor-logo-area img {
+            opacity: 1;
+        }
+
+        .sponsor-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .sponsor-name {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .sponsor-cat {
+            font-size: 0.67rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+        }
+
+        /* External link indicator */
+        .sponsor-link-hint {
+            font-size: 0.65rem;
+            color: var(--accent);
+            opacity: 0;
+            transition: opacity 0.2s;
+            letter-spacing: 0.04em;
+        }
+
+        .sponsor-card:hover .sponsor-link-hint {
+            opacity: 0.7;
+        }
+
+        /* Divider before CTA */
+        .sponsor-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 12px 0 48px;
+        }
+
+        /* Become a Partner CTA */
+        .become-sponsor {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 52px 48px;
+            display: flex;
+            align-items: flex-start;
+            gap: 48px;
+        }
+
+        .become-sponsor-copy {
+            flex: 1;
+        }
+
+        .become-sponsor h2 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .become-sponsor p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.8;
+            max-width: 420px;
+        }
+
+        .become-sponsor-action {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            flex-shrink: 0;
+            padding-top: 4px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 13px 36px;
+            background: var(--accent);
+            color: #000;
+            border-radius: 7px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.82;
+            color: #000;
+        }
+
+        .cta-note {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .become-sponsor { flex-direction: column; gap: 28px; }
+            .become-sponsor-action { align-items: flex-start; }
+        }
+
+        @media (max-width: 900px) {
+            .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
+            .sponsors-grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 720px) {
+            .become-sponsor { padding: 36px 28px; }
+        }
+
+        @media (max-width: 460px) {
+            .sponsors-grid { grid-template-columns: 1fr; }
+            .sponsors-grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="brand-title">Joe Nipote</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li class="nav-dropdown">
+                    <a href="projects.html" class="nav-link">Other Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-header">
+                <h3 class="mobile-menu-title">Menu</h3>
+                <button class="mobile-menu-close">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Other Projects <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">About <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Contact <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <div class="page-header-inner">
+                <span class="page-badge">Partners</span>
+                <h1>Sponsors</h1>
+                <p class="subtitle">Brands Joe has partnered with throughout his career.</p>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="content-inner">
+
+                <p class="sponsors-lead">Over the years Joe has worked with brands across fitness, audio, pet care, home services, entertainment, and more — lending his name to products he genuinely uses and believes in. Click any logo to visit their site.</p>
+
+                <!-- Fitness & Athletics -->
+                <div class="sponsor-group">
+                    <div class="sponsor-group-label">Fitness &amp; Athletics</div>
+                    <div class="sponsors-grid">
+                        <a href="http://www.gearboxrb.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/gearbox logo.jpg" alt="Gearbox">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">Gearbox</span>
+                                <span class="sponsor-cat">Entertainment</span>
+                            </div>
+                            <span class="sponsor-link-hint">gearboxrb.com ↗</span>
+                        </a>
+                        <a href="http://powerblock.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/powerblock logo.png" alt="PowerBlock">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">PowerBlock</span>
+                                <span class="sponsor-cat">Fitness Equipment</span>
+                            </div>
+                            <span class="sponsor-link-hint">powerblock.com ↗</span>
+                        </a>
+                        <a href="https://graciebarra.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/gracie barra.png" alt="Gracie Barra">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">Gracie Barra</span>
+                                <span class="sponsor-cat">Martial Arts</span>
+                            </div>
+                            <span class="sponsor-link-hint">graciebarra.com ↗</span>
+                        </a>
+                        <a href="http://staminaproducts.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/stamina logo.png" alt="Stamina">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">Stamina</span>
+                                <span class="sponsor-cat">Fitness Equipment</span>
+                            </div>
+                            <span class="sponsor-link-hint">staminaproducts.com ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Media & Studio -->
+                <div class="sponsor-group">
+                    <div class="sponsor-group-label">Media &amp; Studio</div>
+                    <div class="sponsors-grid">
+                        <a href="http://www.skbcases.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/skb logo.png" alt="SKB">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">SKB</span>
+                                <span class="sponsor-cat">Cases &amp; Equipment</span>
+                            </div>
+                            <span class="sponsor-link-hint">skbcases.com ↗</span>
+                        </a>
+                        <a href="http://www.mxlmics.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/mxl logo.png" alt="MXL Microphones">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">MXL Microphones</span>
+                                <span class="sponsor-cat">Audio</span>
+                            </div>
+                            <span class="sponsor-link-hint">mxlmics.com ↗</span>
+                        </a>
+                        <a href="http://lasoundpanels.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/lasoundpanels logo.png" alt="LA Sound Panels">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">LA Sound Panels</span>
+                                <span class="sponsor-cat">Acoustics</span>
+                            </div>
+                            <span class="sponsor-link-hint">lasoundpanels.com ↗</span>
+                        </a>
+                        <a href="http://www.leeprint.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="sponsor_logos/lee-printing.jpg" alt="Lee Printing">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">Lee Printing</span>
+                                <span class="sponsor-cat">Print &amp; Media</span>
+                            </div>
+                            <span class="sponsor-link-hint">leeprint.com ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pet Care -->
+                <div class="sponsor-group">
+                    <div class="sponsor-group-label">Pet Care</div>
+                    <div class="sponsors-grid sponsors-grid-3">
+                        <a href="http://orangecountyrottweilers.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/vom bustos logo.jpg" alt="Vom Bustos Hause">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">Vom Bustos Hause</span>
+                                <span class="sponsor-cat">Rottweiler Breeders</span>
+                            </div>
+                            <span class="sponsor-link-hint">orangecountyrottweilers.com ↗</span>
+                        </a>
+                        <a href="https://kuranda.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/Kuranda Logo.jpg" alt="Kuranda">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">Kuranda</span>
+                                <span class="sponsor-cat">Pet Products</span>
+                            </div>
+                            <span class="sponsor-link-hint">kuranda.com ↗</span>
+                        </a>
+                        <a href="https://www.ecollar.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/ecollar logo.png" alt="E-Collar">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">E-Collar</span>
+                                <span class="sponsor-cat">Pet Training</span>
+                            </div>
+                            <span class="sponsor-link-hint">ecollar.com ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Home & Living -->
+                <div class="sponsor-group">
+                    <div class="sponsor-group-label">Home &amp; Living</div>
+                    <div class="sponsors-grid sponsors-grid-3">
+                        <a href="http://jkmarblemaintenance.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/jk marble maintenance logo.png" alt="JK Marble Maintenance">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">JK Marble Maintenance</span>
+                                <span class="sponsor-cat">Home &amp; Design</span>
+                            </div>
+                            <span class="sponsor-link-hint">jkmarblemaintenance.com ↗</span>
+                        </a>
+                        <a href="http://foammart.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="graphic assets/sponsor photos/foammart logo.jpg" alt="FoamMart">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">FoamMart</span>
+                                <span class="sponsor-cat">Materials</span>
+                            </div>
+                            <span class="sponsor-link-hint">foammart.com ↗</span>
+                        </a>
+                        <a href="http://kingtermite.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <div class="sponsor-logo-area">
+                                <img src="sponsor_logos/king-termite.jpg" alt="King Termite Control">
+                            </div>
+                            <div class="sponsor-text">
+                                <span class="sponsor-name">King Termite Control</span>
+                                <span class="sponsor-cat">Home Services</span>
+                            </div>
+                            <span class="sponsor-link-hint">kingtermite.com ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="sponsor-divider">
+
+                <div class="become-sponsor">
+                    <div class="become-sponsor-copy">
+                        <h2>Become a Partner</h2>
+                        <p>Joe works with brands he genuinely believes in — fitness, tech, food, lifestyle, entertainment, and beyond. If you think there's a fit, reach out and let's talk.</p>
+                    </div>
+                    <div class="become-sponsor-action">
+                        <a href="mailto:Joe@joenipote.com" class="cta-btn">Get in Touch →</a>
+                        <span class="cta-note">Joe@joenipote.com</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">Joe Nipote</div>
+            <div class="footer-actions">
+                <a href="mailto:Joe@joenipote.com" class="footer-btn primary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Email Joe
+                </a>
+                <a href="#" class="footer-btn">Speaking</a>
+                <a href="autographs.html" class="footer-btn">Autographs</a>
+                <a href="#" class="footer-btn">Merch</a>
+            </div>
+            <div class="footer-copy">© 2026 Joe Nipote</div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

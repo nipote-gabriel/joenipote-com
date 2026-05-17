@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eggy Yolk™ — Joe Nipote</title>
+    <meta name="description" content="Joe Nipote's children's book — Eggy Yolk and the Dirty Rotten Dozen™. Available on Amazon. Joe is also available for school and bookstore appearances.">
+    <link rel="icon" type="image/png" href="graphic assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .eggy-hero {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 48px;
+        }
+
+        .eggy-cover {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .eggy-cover img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .eggy-intro-text h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .eggy-intro-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .eggy-buy-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 12px 28px;
+            background: var(--accent);
+            color: #000;
+            border-radius: 7px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            transition: opacity 0.2s;
+        }
+
+        .eggy-buy-btn:hover {
+            opacity: 0.82;
+            color: #000;
+        }
+
+        .eggy-photo-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .eggy-photo-row img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        .section-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .appearances-intro {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin-bottom: 32px;
+        }
+
+        .appearances-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .appearance-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 24px 20px;
+        }
+
+        .appearance-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .appearance-card p,
+        .appearance-card ul {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .appearance-card ul {
+            padding-left: 16px;
+        }
+
+        .appearance-card li {
+            margin-bottom: 4px;
+        }
+
+        .rick-dees-quote {
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            margin: 0 0 48px;
+            background: rgba(91,184,222,0.05);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .rick-dees-quote p {
+            font-style: italic;
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+
+        .rick-dees-quote cite {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        .booking-cta {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .booking-cta-copy {
+            flex: 1;
+        }
+
+        .booking-cta h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .booking-cta p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 460px;
+        }
+
+        .booking-cta-action {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            flex-shrink: 0;
+            padding-top: 4px;
+        }
+
+        .booking-cta .cta-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--accent);
+            color: #000;
+            border-radius: 7px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        .booking-cta .cta-btn:hover {
+            opacity: 0.82;
+            color: #000;
+        }
+
+        .booking-cta .cta-note {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 800px) {
+            .eggy-hero { grid-template-columns: 1fr; }
+            .eggy-cover { max-width: 200px; }
+            .appearances-grid { grid-template-columns: 1fr; }
+            .eggy-photo-row { grid-template-columns: 1fr; }
+            .booking-cta { flex-direction: column; gap: 24px; padding: 28px; }
+            .booking-cta-action { align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="brand-title">Joe Nipote</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li class="nav-dropdown">
+                    <a href="projects.html" class="nav-link active">Other Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-header">
+                <h3 class="mobile-menu-title">Menu</h3>
+                <button class="mobile-menu-close">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="acting.html" class="nav-link">Acting &amp; VO</a></li>
+                <li><a href="standup.html" class="nav-link">Standup</a></li>
+                <li><a href="ring-announcer.html" class="nav-link">Ring Announcing</a></li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Other Projects <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="eggy-yolk.html">Eggy Yolk&#8482;</a></li>
+                        <li><a href="comedyslam.html">comedySLAM&#8482;</a></li>
+                        <li><a href="charity-work.html">Charity Work</a></li>
+                        <li><a href="viper.html">Viper Fan Page</a></li>
+                        <li><a href="https://open.spotify.com/album/1hkmwj6l5z3Oi8wUZVqiMf" target="_blank" rel="noopener">Bowling Ball Blues</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">About <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="about.html">Bio</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="mobile-dropdown-toggle">Contact <span class="mobile-dropdown-arrow"></span></button>
+                    <ul class="mobile-sub-links">
+                        <li><a href="contact.html">Representation</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="autographs.html">Autographs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <div class="page-header-inner">
+                <span class="page-badge"><a href="projects.html" style="color:inherit;">Other Projects</a></span>
+                <h1>Eggy Yolk™</h1>
+                <p class="subtitle">Children's author, storyteller, and school performer.</p>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="content-inner">
+
+                <!-- Book + Intro -->
+                <div class="eggy-hero">
+                    <div class="eggy-cover">
+                        <img src="graphic assets/eggy yolk/book-cover-tall.jpg" alt="Eggy Yolk and the Dirty Rotten Dozen">
+                    </div>
+                    <div class="eggy-intro-text">
+                        <h2>Eggy Yolk and the Dirty Rotten Dozen™</h2>
+                        <p>Joe Nipote is an actor and comedian, best known to children as the voice of Uncle Stretch from the film <em>Casper</em>, and as Uncle Marco from <em>Suite Life on Deck</em>.</p>
+                        <p><em>Eggy Yolk and the Dirty Rotten Dozen</em> is Joe's first children's book — and like Sheriff Eggy, he loves to crack jokes and make people laugh. Unlike Eggy, Joe eats eggs every day.</p>
+                        <a href="https://www.amazon.com/dp/B0DWGYTJ1D" target="_blank" rel="noopener" class="eggy-buy-btn">Buy on Amazon →</a>
+                    </div>
+                </div>
+
+                <!-- Photos -->
+                <div class="eggy-photo-row">
+                    <img src="graphic assets/eggy yolk/school-visit.jpg" alt="Joe Nipote at a school appearance">
+                    <img src="graphic assets/eggy yolk/event.jpg" alt="Joe Nipote — Eggy Yolk event">
+                </div>
+
+                <!-- School Appearances -->
+                <p class="section-eyebrow">School &amp; Community Appearances</p>
+                <p class="appearances-intro">Joe Nipote is available for public appearances as a children's storyteller for your school, bookstore, charity organization, or church group. He performs for elementary students in grades 2–6 and delivers an experience kids won't forget.</p>
+
+                <div class="appearances-grid">
+                    <div class="appearance-card">
+                        <h4>What Joe Brings</h4>
+                        <ul>
+                            <li>Live reading of <em>Eggy Yolk and the Dirty Rotten Dozen™</em></li>
+                            <li>Video clips from his TV and film career</li>
+                            <li>Stand-up comedy adapted for kids</li>
+                            <li>Tongue twisters and clean jokes</li>
+                            <li>Q&amp;A session emphasizing the importance of writing</li>
+                        </ul>
+                    </div>
+                    <div class="appearance-card">
+                        <h4>Who It's For</h4>
+                        <ul>
+                            <li>Elementary schools (grades 2–6)</li>
+                            <li>Bookstores and libraries</li>
+                            <li>Charity organizations</li>
+                            <li>Church groups and community events</li>
+                            <li>Private and corporate family events</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Booking CTA -->
+                <div class="booking-cta">
+                    <div class="booking-cta-copy">
+                        <h3>Book Joe for Your Event</h3>
+                        <p>Bring Joe's Eggy Yolk experience to your school or organization. Reach out directly to check availability and discuss the details.</p>
+                    </div>
+                    <div class="booking-cta-action">
+                        <a href="mailto:Joe@joenipote.com" class="cta-btn">Email Joe →</a>
+                        <span class="cta-note">Joe@joenipote.com</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">Joe Nipote</div>
+            <div class="footer-actions">
+                <a href="mailto:Joe@joenipote.com" class="footer-btn primary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Email Joe
+                </a>
+                <a href="#" class="footer-btn">Speaking</a>
+                <a href="autographs.html" class="footer-btn">Autographs</a>
+                <a href="#" class="footer-btn">Merch</a>
+            </div>
+            <div class="footer-copy">© 2026 Joe Nipote</div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
