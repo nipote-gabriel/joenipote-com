@@ -50,17 +50,24 @@
         }
         .lightbox-close:hover { opacity: 1; }
 
-        .gallery-section-label {
-            font-size: 0.68rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            margin-top: 36px;
+        .gallery-masonry {
+            columns: 4;
+            column-gap: 4px;
         }
-
-        .gallery-section-label:first-child { margin-top: 0; }
+        .gallery-masonry .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 4px;
+            aspect-ratio: unset;
+            display: block;
+        }
+        .gallery-masonry .gallery-item img {
+            height: auto;
+            width: 100%;
+            display: block;
+        }
+        @media (max-width: 820px) {
+            .gallery-masonry { columns: 2; }
+        }
     </style>
 </head>
 <body>
@@ -152,125 +159,197 @@
         <section class="content-section">
             <div class="content-inner">
 
-                <!-- Standup & Early Career -->
-                <p class="gallery-section-label">Standup &amp; Early Career</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item wide" data-src="graphic assets/gallery/joenipote_newcomercomic.jpg">
+                <div class="gallery-masonry">
+                    <div class="gallery-item" data-src="graphic assets/gallery/joenipote_newcomercomic.jpg">
                         <img src="graphic assets/gallery/joenipote_newcomercomic.jpg" alt="Joe Nipote — early comedy career" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/ring1.jpg">
+                        <img src="graphic assets/gallery/ring1.jpg" alt="Joe Nipote — ring announcing" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/joe and jayleno.jpg">
+                        <img src="graphic assets/gallery/joe and jayleno.jpg" alt="Joe Nipote and Jay Leno" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/-2 vo pic.jpg">
+                        <img src="graphic assets/gallery/-2 vo pic.jpg" alt="Joe Nipote — voiceover" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/img_0541c.jpg">
+                        <img src="graphic assets/gallery/img_0541c.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/joe nipote - tropicana marquis march.jpg">
                         <img src="graphic assets/gallery/joe nipote - tropicana marquis march.jpg" alt="Joe Nipote — Tropicana Marquis" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/college humorr.jpg">
-                        <img src="graphic assets/gallery/college humorr.jpg" alt="Joe Nipote — college comedy" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/fullsizerender1.jpg">
-                        <img src="graphic assets/gallery/fullsizerender1.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 600x400.jpg">
-                        <img src="graphic assets/gallery/pasted image 600x400.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                </div>
-
-                <!-- Celebrity Friends -->
-                <p class="gallery-section-label">Famous Friends</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item wide" data-src="graphic assets/gallery/joe and jayleno.jpg">
-                        <img src="graphic assets/gallery/joe and jayleno.jpg" alt="Joe Nipote and Jay Leno" loading="lazy">
+                    <div class="gallery-item" data-src="graphic assets/gallery/ring_announce1.jpg">
+                        <img src="graphic assets/gallery/ring_announce1.jpg" alt="Joe Nipote — ring announcing" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/joe with fritz coleman-crop-u6836.jpg">
                         <img src="graphic assets/gallery/joe with fritz coleman-crop-u6836.jpg" alt="Joe Nipote with Fritz Coleman" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/gerry orz and me.jpg">
-                        <img src="graphic assets/gallery/gerry orz and me.jpg" alt="Joe Nipote with Gerry" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/me and frazer.jpg">
-                        <img src="graphic assets/gallery/me and frazer.jpg" alt="Joe Nipote and Frazer" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 507x328.jpg">
-                        <img src="graphic assets/gallery/pasted image 507x328.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                </div>
-
-                <!-- Voice & Acting -->
-                <p class="gallery-section-label">Voice &amp; Acting</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-src="graphic assets/gallery/-2 vo pic.jpg">
-                        <img src="graphic assets/gallery/-2 vo pic.jpg" alt="Joe Nipote — voiceover" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/final favorite vo pic -3.jpg">
                         <img src="graphic assets/gallery/final favorite vo pic -3.jpg" alt="Joe Nipote — voiceover" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/img_0542c-crop-u8444.jpg">
+                        <img src="graphic assets/gallery/img_0542c-crop-u8444.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/college humorr.jpg">
+                        <img src="graphic assets/gallery/college humorr.jpg" alt="Joe Nipote — college comedy" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/ringer.jpg">
+                        <img src="graphic assets/gallery/ringer.jpg" alt="Joe Nipote — ring announcer" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/gerry orz and me.jpg">
+                        <img src="graphic assets/gallery/gerry orz and me.jpg" alt="Joe Nipote with Gerry" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/joenipoteeggycasaevent.jpg">
                         <img src="graphic assets/gallery/joenipoteeggycasaevent.jpg" alt="Joe Nipote — Eggy Yolk event" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 400x600.jpg">
+                        <img src="graphic assets/gallery/pasted image 400x600.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/fullsizerender1.jpg">
+                        <img src="graphic assets/gallery/fullsizerender1.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pg2c.jpg">
+                        <img src="graphic assets/gallery/pg2c.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/me and frazer.jpg">
+                        <img src="graphic assets/gallery/me and frazer.jpg" alt="Joe Nipote and Frazer" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/pasted image 446x575.jpg">
                         <img src="graphic assets/gallery/pasted image 446x575.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 350x250.jpg">
+                        <img src="graphic assets/gallery/pasted image 350x250.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 600x400.jpg">
+                        <img src="graphic assets/gallery/pasted image 600x400.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 507x328.jpg">
+                        <img src="graphic assets/gallery/pasted image 507x328.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/gettyimages-872658498-612x612.jpg">
                         <img src="graphic assets/gallery/gettyimages-872658498-612x612.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_3230.jpeg">
+                        <img src="graphic assets/gallery/IMG_3230.jpeg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/gettyimages-872658816-612x612.jpg">
                         <img src="graphic assets/gallery/gettyimages-872658816-612x612.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_3339.jpeg">
+                        <img src="graphic assets/gallery/IMG_3339.jpeg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/gettyimages-105192383-612x612.jpg">
                         <img src="graphic assets/gallery/gettyimages-105192383-612x612.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4768.jpeg">
+                        <img src="graphic assets/gallery/IMG_4768.jpeg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/gettyimages-105192580-612x612.jpg">
                         <img src="graphic assets/gallery/gettyimages-105192580-612x612.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4770.jpeg">
+                        <img src="graphic assets/gallery/IMG_4770.jpeg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/gettyimages-145266146-612x612.jpg">
                         <img src="graphic assets/gallery/gettyimages-145266146-612x612.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4780.jpeg">
+                        <img src="graphic assets/gallery/IMG_4780.jpeg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/gettyimages-183160920-612x612.jpg">
                         <img src="graphic assets/gallery/gettyimages-183160920-612x612.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4782.jpeg">
+                        <img src="graphic assets/gallery/IMG_4782.jpeg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/gettyimages-2118742546-612x612.jpg">
                         <img src="graphic assets/gallery/gettyimages-2118742546-612x612.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4785.jpeg">
+                        <img src="graphic assets/gallery/IMG_4785.jpeg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/images-1.jpg">
                         <img src="graphic assets/gallery/images-1.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_9617.jpeg">
+                        <img src="graphic assets/gallery/IMG_9617.jpeg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/images-2.jpg">
                         <img src="graphic assets/gallery/images-2.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/JPEG image.jpeg">
+                        <img src="graphic assets/gallery/JPEG image.jpeg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/images-3.jpg">
                         <img src="graphic assets/gallery/images-3.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 260x367.jpg">
+                        <img src="graphic assets/gallery/pasted image 260x367.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/images-4.jpg">
                         <img src="graphic assets/gallery/images-4.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 320x237.jpg">
+                        <img src="graphic assets/gallery/pasted image 320x237.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/images-5.jpg">
                         <img src="graphic assets/gallery/images-5.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 320x2402.jpg">
+                        <img src="graphic assets/gallery/pasted image 320x2402.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/download.jpg">
                         <img src="graphic assets/gallery/download.jpg" alt="Joe Nipote" loading="lazy">
+                        <div class="gallery-item-overlay"></div>
+                    </div>
+                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 450x360.jpg">
+                        <img src="graphic assets/gallery/pasted image 450x360.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/download-2.jpg">
@@ -291,100 +370,6 @@
                     </div>
                     <div class="gallery-item" data-src="graphic assets/gallery/download-6.jpg">
                         <img src="graphic assets/gallery/download-6.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                </div>
-
-                <!-- Ring Announcing -->
-                <p class="gallery-section-label">Ring Announcing</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-src="graphic assets/gallery/ring1.jpg">
-                        <img src="graphic assets/gallery/ring1.jpg" alt="Joe Nipote — ring announcing" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item wide" data-src="graphic assets/gallery/ring_announce1.jpg">
-                        <img src="graphic assets/gallery/ring_announce1.jpg" alt="Joe Nipote — ring announcing" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/ringer.jpg">
-                        <img src="graphic assets/gallery/ringer.jpg" alt="Joe Nipote — ring announcer" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pg2c.jpg">
-                        <img src="graphic assets/gallery/pg2c.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                </div>
-
-                <!-- More Photos -->
-                <p class="gallery-section-label">More</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-src="graphic assets/gallery/img_0541c.jpg">
-                        <img src="graphic assets/gallery/img_0541c.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/img_0542c-crop-u8444.jpg">
-                        <img src="graphic assets/gallery/img_0542c-crop-u8444.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 400x600.jpg">
-                        <img src="graphic assets/gallery/pasted image 400x600.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 350x250.jpg">
-                        <img src="graphic assets/gallery/pasted image 350x250.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_3230.jpeg">
-                        <img src="graphic assets/gallery/IMG_3230.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_3339.jpeg">
-                        <img src="graphic assets/gallery/IMG_3339.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4768.jpeg">
-                        <img src="graphic assets/gallery/IMG_4768.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4770.jpeg">
-                        <img src="graphic assets/gallery/IMG_4770.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4780.jpeg">
-                        <img src="graphic assets/gallery/IMG_4780.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4782.jpeg">
-                        <img src="graphic assets/gallery/IMG_4782.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_4785.jpeg">
-                        <img src="graphic assets/gallery/IMG_4785.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/IMG_9617.jpeg">
-                        <img src="graphic assets/gallery/IMG_9617.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/JPEG image.jpeg">
-                        <img src="graphic assets/gallery/JPEG image.jpeg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 260x367.jpg">
-                        <img src="graphic assets/gallery/pasted image 260x367.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 320x237.jpg">
-                        <img src="graphic assets/gallery/pasted image 320x237.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 320x2402.jpg">
-                        <img src="graphic assets/gallery/pasted image 320x2402.jpg" alt="Joe Nipote" loading="lazy">
-                        <div class="gallery-item-overlay"></div>
-                    </div>
-                    <div class="gallery-item" data-src="graphic assets/gallery/pasted image 450x360.jpg">
-                        <img src="graphic assets/gallery/pasted image 450x360.jpg" alt="Joe Nipote" loading="lazy">
                         <div class="gallery-item-overlay"></div>
                     </div>
                 </div>
