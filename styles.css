@@ -1249,7 +1249,11 @@ img { max-width: 100%; display: block; }
         object-position: center;
     }
 
-    .video-controls-bar { display: none; }
+    .video-controls-bar { background: none; padding: 0; }
+    .video-progress-container { display: none; }
+    #play-pause-toggle { display: none; }
+    .video-time { display: none; }
+    .video-controls-row { justify-content: flex-end; padding: 8px 10px; }
 
     .info-column {
         order: 2;
